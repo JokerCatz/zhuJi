@@ -1,0 +1,7 @@
+cowsay
+
+asciiquarium
+
+xmoto
+
+...
