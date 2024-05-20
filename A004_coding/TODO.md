@@ -1,4 +1,4 @@
 ENV , argvs , config file
-io , socket
+io , socket (maybe late)
 flow
-multithread
+regex + game
