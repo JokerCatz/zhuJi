@@ -1,0 +1,26 @@
+# file permission (only explain +x)
+chmod +x xxxfile # make it exec able
+chmod -x xxxfile # make it un-exec able
+
+# what is hostname
+vim /etc/hosts # make a static DNS
+
+# loopback IP # make a new self IP
+ifconfig lo:1 10.10.10.10 netmask 255.255.255.0 up
+
+# loopback dev
+dd if=/dev/zero of=./zero.img # read zero to file
+fdisk ./zero.img # edit mode
+# (m : menu / help)
+# (o : DOS partition table , g : GPT partition table)
+# (n : new , p = print)
+# (l : list partition type , 11 for windows)
+# (t : for change parition type)
+# (w : write , q : quit without save)
+fdisk -l ./zero.img # list only
+
+losetup -P /dev/loop0 ./zero.img # link file as dev
+mkfs.ntfs /dev/loop0p1           # format partition to NTFS
+losetup -d /dev/loop0            # unlink file as dev
+
+# make a server to loopback IP for multi IP server conn test
